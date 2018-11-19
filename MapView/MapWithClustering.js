@@ -46,6 +46,7 @@ export default class MapWithClustering extends Component {
   }
 
   onRegionChangeComplete = (region) => {
+    this.props.onRegionChangeComplete(region)
     const { latitude, latitudeDelta, longitude, longitudeDelta } = this.state.currentRegion;
     if (region.longitudeDelta <= 80) {
       if ((Math.abs(region.latitudeDelta - latitudeDelta) > latitudeDelta / 8)
